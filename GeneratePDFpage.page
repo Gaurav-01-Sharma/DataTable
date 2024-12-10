@@ -1,0 +1,26 @@
+
+<apex:page controller="AccountController" renderAs="pdf">
+    
+      <div style="float: left; margin-right: 20px; margin-bottom: 20px;">
+        <img src="{!URLFOR($Resource.MetadologieLogo)}" alt="MetadologieLogo" style="width: 80px; height: auto;"/>
+    </div>
+    <h1 style="text-align: center;">Selected Accounts</h1>
+    <table style="width: 100%; border-collapse: collapse;" border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Industry</th>
+            </tr>
+        </thead>
+        <tbody>
+            <apex:repeat value="{!selectedAccounts}" var="acc">
+                <tr>
+                    <td>{!acc.Name}</td>
+                    <td>{!acc.Phone}</td>
+                    <td>{!acc.Industry}</td>
+                </tr>
+            </apex:repeat>
+        </tbody>
+    </table>
+</apex:page>
